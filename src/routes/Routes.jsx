@@ -5,6 +5,9 @@ import MainOutlet from "../layout/MainOutlet";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AddProducts from "../pages/AddProducts";
+// import Products from "../pages/products/Products";
+import AddBrand from "../components/AddBrand";
+import BrandWishProduct from "../pages/BrandWishProduct";
 
 const routes = createBrowserRouter([
     {
@@ -13,12 +16,22 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/brands')
+            },
+            {
+                path: '/brand-product/:id',
+                element: <BrandWishProduct />,
+                loader: ({params}) => fetch(`http://localhost:5000/brands/${params.id}`)
+                
             },
             {
                 path: '/addProduct',
-                element: <AddProducts></AddProducts>
+                element: <AddProducts></AddProducts>,
+                loader: () => fetch('http://localhost:5000/brands')
+                
             }
+            
         ]
     },
     {
@@ -28,7 +41,12 @@ const routes = createBrowserRouter([
     {
         path: '/register',
         element: <Register></Register>
+    },
+    {
+        path: '/brand',
+        element: <AddBrand></AddBrand>
     }
+    
 ])
 
 export default routes;
