@@ -11,7 +11,7 @@ const Footer = () => {
                         underline">&</span>
                         <span className="text-4xl font-bold text-pink-700 italic">bev</span></Link>
                     <p className="font-bold">
-                        ACME Industries Ltd. <br />Providing reliable tech since 1992
+                        F & Bev Industries Ltd. <br />Providing reliable tech since 1992
                     </p>
                     <p>Copyright © 2023 - All right reserved</p>
                 </aside>

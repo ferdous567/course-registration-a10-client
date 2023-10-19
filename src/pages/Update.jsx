@@ -5,24 +5,25 @@ import Swal from "sweetalert2";
 const Update = () => {
     const [brands, setBrands] = useState([]);
 
-    const brand = useLoaderData();
+    const product = useLoaderData();
 
+    
+    
     const handleUpdate = e =>{
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
-        
         const type = form.type.value;
         const price = form.price.value;
         const rating = form.rating.value;
         const image = form.image.value;
-        const brand_id = form.brand_id.value;
+        const brand = form.brand_id.value;
         const shortDesc = form.shortDesc.value;
-        const newProduct = {name, brand, type, price, rating, image, shortDesc, brand_id};
+        const newProduct = {name,  type, price, rating, image, shortDesc, brand};
         
         console.log(newProduct)
         
-        fetch('http://localhost:5000/products',{
+        fetch(`http://localhost:5000/products/${product._id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -62,7 +63,7 @@ const Update = () => {
                         </label>
                         <label className="input-group">
                             
-                            <input type="text" name="name" placeholder="Product Name" 
+                            <input type="text" name="name" defaultValue={product.name} placeholder="Product Name" 
                             className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -77,7 +78,7 @@ const Update = () => {
                             
                             {
                                 brands.map(brand => <option key={brand._id} 
-                                    value={brand._id}>{brand.brandName}</option>)
+                                    value={brand.brandName} selected = {brand.brandName == product.brand && 'selected'}>{brand.brandName}</option>)
                             }
                         </select>
                         </label>
@@ -91,7 +92,7 @@ const Update = () => {
                         </label>
                         <label className="input-group">
                             
-                            <input type="text" name="type" placeholder="Product Type" 
+                            <input type="text" name="type" defaultValue={product.type}  placeholder="Product Type" 
                             className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -101,7 +102,7 @@ const Update = () => {
                         </label>
                         <label className="input-group">
                             
-                            <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
+                            <input type="text" name="price" defaultValue={product.price} placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -113,7 +114,7 @@ const Update = () => {
                         </label>
                         <label className="input-group">
                             
-                            <input type="text" name="rating" placeholder="Rating" 
+                            <input type="text" name="rating" defaultValue={product.rating} placeholder="Rating" 
                             className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -124,7 +125,7 @@ const Update = () => {
                         </label>
                         <label className="input-group">
                             
-                            <input type="text" name="shortDesc" placeholder="Short Descriptions" className="input input-bordered w-full" />
+                            <input type="text" name="shortDesc" defaultValue={product.shortDesc} placeholder="Short Descriptions" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -136,7 +137,7 @@ const Update = () => {
                         </label>
                         <label className="input-group">
                             
-                            <input type="text" name="image" placeholder="ImageURL" 
+                            <input type="text" name="image" defaultValue={product.image} placeholder="ImageURL" 
                             className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -144,9 +145,9 @@ const Update = () => {
                 </div>
                 {/* row 5 */}
                 <div className="my-5 ">
-                    <Link>
-                    <button className="btn btn-success w-full">Add Item</button>
-                    </Link>
+                   
+                    <button type="submit" className="btn btn-success w-full">Add Item</button>
+                    
                 </div>
             </form>
         </div>

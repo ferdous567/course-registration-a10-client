@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 const AddProducts = () => {
     const [brands, setBrands] = useState([]);
 
-    const brand = useLoaderData();
 
     const handleProduct = e =>{
         e.preventDefault();
@@ -18,9 +17,9 @@ const AddProducts = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const image = form.image.value;
-        const brand_id = form.brand_id.value;
+        const brand = form.brand_id.value;
         const shortDesc = form.shortDesc.value;
-        const newProduct = {name, brand, type, price, rating, image, shortDesc, brand_id};
+        const newProduct = {name, type, price, rating, image, shortDesc, brand};
         
         console.log(newProduct)
         
@@ -83,7 +82,7 @@ const AddProducts = () => {
                             
                             {
                                 brands.map(brand => <option key={brand._id} 
-                                    value={brand._id}>{brand.brandName}</option>)
+                                    value={brand.brandName}>{brand.brandName}</option>)
                             }
                         </select>
                         </label>

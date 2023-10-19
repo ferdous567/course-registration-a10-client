@@ -1,23 +1,22 @@
 import { useLoaderData } from "react-router-dom";
 import AskQues from "../components/AskQues";
-import Banner from "../components/Banner";
+
 import Brand from "../components/Brand";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+
+import Header from "../components/Header";
 
 const Home = () => {
 
-    const products = useLoaderData();
-    console.log(products);
-    
-    // const filter = products.brand
+    const brands = useLoaderData();
+   
+  
 
     return (
         <div>
-            <Navbar></Navbar>
-            <Banner></Banner>
-            <Brand products={products}></Brand>
+            <Header></Header>
+            <Brand brands={brands}></Brand>
             <AskQues></AskQues>
             <Contact></Contact>
             <Footer></Footer>

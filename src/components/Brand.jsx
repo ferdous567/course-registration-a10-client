@@ -5,10 +5,9 @@ import { useLoaderData } from "react-router-dom";
 import SingleBrand from "./SingleBrand";
 
 
-const Brand = () => {
+const Brand = ({brands}) => {
   
-  const brand = useLoaderData();
-  console.log(brand)
+console.log(brands);
     
     return (
 
@@ -17,7 +16,7 @@ const Brand = () => {
             <div className="md:grid grid-cols-3 gap-6 my-10">
             
             {
-                brand.map(item => <SingleBrand key={item._id} singleBrand={item}></SingleBrand>)
+                brands.map(item => <SingleBrand key={item._id} singleBrand={item}></SingleBrand>)
             }
         </div>
         </div>
