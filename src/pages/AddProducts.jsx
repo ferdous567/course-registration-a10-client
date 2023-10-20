@@ -23,7 +23,7 @@ const AddProducts = () => {
         
         console.log(newProduct)
         
-        fetch('http://localhost:5000/products',{
+        fetch('https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/products',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ const AddProducts = () => {
     }
 
     useEffect(() =>{
-        fetch('http://localhost:5000/brands')
+        fetch('https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/brands')
         .then(res => res.json())
         .then(data => {
             setBrands(data)

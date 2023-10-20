@@ -23,18 +23,18 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/brands')
+                loader: () => fetch('https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/brands')
             },
             {
                 path: '/brand-product/:id',
                 element: <BrandWishProduct />,
-                loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.id}`)
+                loader: ({ params }) => fetch(`https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/brands/${params.id}`)
 
             },
             {
                 path: '/addProduct',
                 element: <AddProducts></AddProducts>,
-                loader: () => fetch('http://localhost:5000/brands')
+                loader: () => fetch('https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/brands')
 
             }
 
@@ -58,21 +58,21 @@ const routes = createBrowserRouter([
         element: <PrivateRoute>
             <ProductCardDetails></ProductCardDetails>
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+        loader: ({ params }) => fetch(`https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/products/${params.id}`)
     },
     {
         path: '/myCart',
         element: <PrivateRoute>
             <AddCart></AddCart>
         </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/carts')
+        loader: () => fetch('https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/carts')
     },
     {
         path: '/update/:id',
         element: <PrivateRoute>
             <Update></Update>
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+        loader: ({ params }) => fetch(`https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/products/${params.id}`)
     }
 
 ])

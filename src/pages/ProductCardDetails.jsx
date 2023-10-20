@@ -13,7 +13,7 @@ const ProductCardDetails = () => {
         const newCart = { name, image, type, price, rating };
         console.log(newCart)
 
-        fetch('http://localhost:5000/carts', {
+        fetch('https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/carts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,8 +50,8 @@ const ProductCardDetails = () => {
                         <p>Price: {price}</p>
                         <p className="">Rating : {rating}</p>
                         <p className="mb-2">Description : {shortDesc}</p>
-                        <div >
-                            <button onClick={handleCart} className="btn btn-outline btn-warning "
+                        <div className="">
+                            <button onClick={handleCart} className="btn btn-outline btn-warning mb-5"
                             >Add to cart</button>
                             <Link to = '/myCart'>
                                 <button className="btn btn-outline btn-secondary ml-5">See your Cart Items</button>

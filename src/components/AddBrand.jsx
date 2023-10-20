@@ -9,7 +9,7 @@ const AddBrand = () => {
         const newBrand = {brandName, photourl};
         console.log(newBrand)
 
-        fetch('http://localhost:5000/brands',{
+        fetch('https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/brands',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

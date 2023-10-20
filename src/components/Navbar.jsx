@@ -33,6 +33,7 @@ const Navbar = () => {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/addProduct'>Add Product</NavLink></li>
         <li><NavLink to='/myCart'>My Cart</NavLink></li>
+        <li><NavLink to='/login'>Login</NavLink></li>
 
     </>
     return (

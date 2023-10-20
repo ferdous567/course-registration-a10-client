@@ -21,7 +21,7 @@ const SingleCart = ({ cart, carts, setCarts }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/carts/${_id}`, {
+                fetch(`https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/carts/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

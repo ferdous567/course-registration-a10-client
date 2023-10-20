@@ -11,7 +11,7 @@ const BrandWishProduct = () => {
     console.log(getBrand);
     useEffect(() => {
         const fetchData = async () => {
-            const res = await fetch(`http://localhost:5000/brand-product/${getBrand?.brandName}`);
+            const res = await fetch(`https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/brand-product/${getBrand?.brandName}`);
             const data = await res.json();
             setProducts(data);
         };
