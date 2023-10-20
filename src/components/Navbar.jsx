@@ -87,13 +87,14 @@ const Navbar = () => {
                                 <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-xl dropdown-content bg-base-100 rounded-box w-62">
                                     <li className="p-2">{user.displayName}</li>
                                     <li className="p-2">{user.email}</li>
-                                    <Link to='/login'>
+                                    
                                         <button onClick={handleLogOut} className="btn btn-outline btn-success w-full">Log Out</button>
 
-                                    </Link>
                                 </ul>
                             </div>
-                        </div> : <button  className="btn btn-outline btn-success">Login</button>
+                        </div> : <Link  to='/login'>
+                        <button  className="btn btn-outline btn-success">Login</button>
+                        </Link>
                     }
 
 

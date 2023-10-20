@@ -33,7 +33,9 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/addProduct',
-                element: <AddProducts></AddProducts>,
+                element: <PrivateRoute>
+                    <AddProducts></AddProducts>
+                </PrivateRoute>,
                 loader: () => fetch('https://food-bevarage-server-il07zob08-khaledas-projects.vercel.app/brands')
 
             }
