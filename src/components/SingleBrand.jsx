@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+
 
 const SingleBrand = ({ singleBrand }) => {
     // console.log(singleBrand)
     const { _id,brandName, photourl } = singleBrand;
     return (
-        <div >
+        <div className="mb-5">
 
            <div className="card bg-base-100 shadow-xl p-6">
                 <figure><img className="h-[200px]" src={photourl} alt="" /></figure>
@@ -20,4 +22,9 @@ const SingleBrand = ({ singleBrand }) => {
     );
 };
 
+
+SingleBrand.propTypes = {
+    singleBrand: PropTypes.array,
+
+}
 export default SingleBrand;

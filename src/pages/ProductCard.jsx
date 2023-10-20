@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-
+import PropTypes from 'prop-types';
 
 const ProductCard = ({ product, getBrand }) => {
 
@@ -14,7 +14,7 @@ const ProductCard = ({ product, getBrand }) => {
 
 
             {/* card section */}
-            <div className="bg-pink-300 border rounded-xl p-8 flex-grow">
+            <div className=" mb-5 bg-pink-300 border rounded-xl p-8 flex-grow">
                 <h2 className="text-2xl my-2">name : {name}</h2>
                 <img className="h-[200px]" src={image} alt="" />
                 <div className="mt-4">
@@ -35,4 +35,10 @@ const ProductCard = ({ product, getBrand }) => {
     );
 };
 
+
+ProductCard.propTypes = {
+    product: PropTypes.array,
+    getBrand: PropTypes.array
+
+}
 export default ProductCard;

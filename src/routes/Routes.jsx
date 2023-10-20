@@ -11,11 +11,14 @@ import BrandWishProduct from "../pages/BrandWishProduct";
 import ProductCardDetails from "../pages/ProductCardDetails";
 import AddCart from "../pages/AddCart";
 import Update from "../pages/Update";
+import PrivateRoute from "./PrivateRoute";
+import Error from "../pages/Error";
 
 const routes = createBrowserRouter([
     {
         path: '/',
         element: <MainOutlet></MainOutlet>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
@@ -25,17 +28,17 @@ const routes = createBrowserRouter([
             {
                 path: '/brand-product/:id',
                 element: <BrandWishProduct />,
-                loader: ({params}) => fetch(`http://localhost:5000/brands/${params.id}`)
-                
+                loader: ({ params }) => fetch(`http://localhost:5000/brands/${params.id}`)
+
             },
             {
                 path: '/addProduct',
                 element: <AddProducts></AddProducts>,
                 loader: () => fetch('http://localhost:5000/brands')
-                
+
             }
-            
-            
+
+
         ]
     },
     {
@@ -52,20 +55,26 @@ const routes = createBrowserRouter([
     },
     {
         path: '/productCardDetails/:id',
-        element: <ProductCardDetails></ProductCardDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+        element: <PrivateRoute>
+            <ProductCardDetails></ProductCardDetails>
+        </PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
     },
     {
         path: '/myCart',
-        element: <AddCart></AddCart>,
+        element: <PrivateRoute>
+            <AddCart></AddCart>
+        </PrivateRoute>,
         loader: () => fetch('http://localhost:5000/carts')
     },
     {
         path: '/update/:id',
-        element: <Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+        element: <PrivateRoute>
+            <Update></Update>
+        </PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
     }
-    
+
 ])
 
 export default routes;

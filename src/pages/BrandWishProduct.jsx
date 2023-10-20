@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import ProductCard from './ProductCard';
 
@@ -7,7 +7,7 @@ const BrandWishProduct = () => {
     const getBrand = useLoaderData();
 
     const [products, setProducts] = useState([])
-    
+
     console.log(getBrand);
     useEffect(() => {
         const fetchData = async () => {
@@ -18,9 +18,9 @@ const BrandWishProduct = () => {
         fetchData();
     }, [getBrand])
 
-    if(products.length === 0){
+    if (products.length === 0) {
         console.log('no item found')
-     }
+    }
     return (
         <div>
             <div className='m-10'>
@@ -64,21 +64,23 @@ const BrandWishProduct = () => {
 
             </div>
 
-           
-                
+            <div className=''>
                 {
-                    (products.length !== 0) ?  <div className='m-10  md:w-11/12 mx-auto md:grid grid-cols-4 gap-4 '>
-                    {
-                    products?.map(product => <ProductCard getBrand={getBrand} key={product?._id} product={product}></ProductCard>) 
-                    } </div>
-                    : <div className='w-1/2 mx-auto'>
-                    <h2 className='text-5xl text-center font-bold text-red-600'>No items found</h2>
-                    </div>
+                    (products.length !== 0) ? <div className='m-10 w-11/12 mx-auto  md:grid grid-cols-2 lg:grid-cols-4 gap-4 '>
+                        {
+                            products?.map(product => <ProductCard getBrand={getBrand} key={product?._id} product={product}></ProductCard>)
+                        } </div>
+                        : <div className='w-1/2 mx-auto'>
+                            <h2 className='text-5xl text-center font-bold text-red-600'>No items found</h2>
+                        </div>
                 }
+            </div>
 
-            
+
         </div>
     );
 };
+
+
 
 export default BrandWishProduct;

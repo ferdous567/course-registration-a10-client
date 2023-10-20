@@ -1,8 +1,8 @@
 
 import Swal from "sweetalert2";
 import Navbar from "../components/Navbar";
-import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 
 const AddProducts = () => {
     const [brands, setBrands] = useState([]);
