@@ -54,7 +54,7 @@ const ProductCardDetails = () => {
                             <button onClick={handleCart} className="btn btn-outline btn-warning mb-5"
                             >Add to cart</button>
                             <Link to = '/myCart'>
-                                <button className="btn btn-outline btn-secondary ml-5">See your Cart Items</button>
+                                <button className="btn btn-outline btn-secondary md:ml-5">See your Cart Items</button>
                             </Link>
                         </div>
                     </div>

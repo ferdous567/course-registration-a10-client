@@ -2,7 +2,7 @@
 const Banner = () => {
     return (
         <div className=" relative">
-            <h2 className="text-white absolute top-20 left-20 text-5xl font-extrabold">Food for  
+            <h2 className="text-white absolute top-20 md:left-20 text-5xl font-extrabold">Food for  
             <span className="text-red-600 text-6xl"> delicious</span><br />  and 
             <br /><span className="tracking-wider text-6xl text-yellow-400 ">Nutritions</span></h2>
               <img className="h-[400px] w-full"

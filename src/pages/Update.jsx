@@ -89,7 +89,7 @@ const Update = () => {
                     </div>
                     {/* row 2 */}
                     <div className="md:flex ">
-                        <div className="form-control md:w-1/2">
+                        <div className="form-control md:w-1/2 ">
                             <label className="label">
                                 <span className="label-text">Product Type</span>
                             </label>
@@ -99,7 +99,7 @@ const Update = () => {
                                     className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-8 mb-5">
+                        <div className="form-control md:w-1/2 md:ml-8 mb-5">
                             <label className="label">
                                 <span className="label-text">Price</span>
                             </label>
@@ -122,7 +122,7 @@ const Update = () => {
                             </label>
                         </div>
 
-                        <div className="form-control md:w-1/2 ml-8 mb-5">
+                        <div className="form-control md:w-1/2 md:ml-8 mb-5">
                             <label className="label">
                                 <span className="label-text">Short Descriptions</span>
                             </label>
