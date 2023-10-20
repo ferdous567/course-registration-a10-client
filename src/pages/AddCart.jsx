@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import SingleCart from "./SingleCart";
 import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const AddCart = () => {
 
@@ -12,6 +14,7 @@ const AddCart = () => {
 
     return (
         <div>
+            <Navbar></Navbar>
             <h3 className="text-4xl text-center font-bold my-10">My Cart Items : {carts.length}</h3>
             <div className="w-3/4 mx-auto ">
                 {
@@ -20,6 +23,7 @@ const AddCart = () => {
                         ></SingleCart>)
                 }
             </div>
+            <Footer></Footer>
         </div>
     );
 };

@@ -21,6 +21,15 @@ const ProductCard = ({ product, getBrand }) => {
                     <h2>Brand: {getBrand.brandName}</h2>
                     <h2>Type: {type}</h2>
                     <h2>Price: {price}</h2>
+                    <h2>Ratings:
+                        <div className="rating rating-sm ml-3">
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-violet-500" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-violet-500"  />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-violet-500" checked/>
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-violet-500" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-violet-500" />
+                        </div>
+                    </h2>
                 </div>
                 <div className="">
                     <Link to={`/productCardDetails/${_id}`}>

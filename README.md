@@ -1,8 +1,18 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### My client side live link : https://food-bevarage.web.app/
 
-Currently, two official plugins are available:
+## Five features are using this projects
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Firebase: firebase use this projects for authentication and client side deployes. Works it very good.
+
+2. Vercel: It used to serverside deployment, it also good workable.
+
+3. MongoDB: Mongodb is a main attraction to this projects. Its very enjoyable, i enjoy it very much, and it is very helpful too.
+
+4. Dark theme: Its not a very big things, but as a new , its challanging to me. At last i complete it successfully.
+
+5. I use also css framework- tailwind and daisiUI, javascript liberary- react, sweet alert and so on.
+
+# Above all 
+this project was very difficult to a new like me. Even then i accepts this challanges, and alhamdulillah i got it. Happy coding. Assalamualaikum. 
+

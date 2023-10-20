@@ -149,7 +149,7 @@ const Update = () => {
                     {/* row 5 */}
                     <div className="my-5 ">
 
-                        <button type="submit" className="btn btn-success w-full">Add Item</button>
+                        <button type="submit" className="btn btn-success w-full">Update Item</button>
 
                     </div>
                 </form>
